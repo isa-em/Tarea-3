@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>MOOD - El Buzón que nunca dije</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <button onclick="abrirMenu()">&#9776;</button>
+    <h1 id="titulo-pagina">MOOD</h1>
+  </header>
+
+  <!-- Menú lateral -->
+  <nav id="sidebar">
+    <button onclick="cerrarMenu()">&times;</button>
+    <ul>
+      <li><a href="#" onclick="mostrar('inicio')">Inicio</a></li>
+      <li><a href="#" onclick="mostrar('acerca')">El Buzón que nunca dije</a></li>
+      <li><a href="#" onclick="mostrar('historia')">Contar Historia</a></li>
+      <li><a href="#" onclick="mostrar('nosotros')">Nosotros</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido -->
+  <main>
+    <!-- Inicio -->
+    <section id="inicio">
+      <p>
+        Bienvenido a MOOD!!! <br>
+        Este es el espacio donde tu voz importa, incluso si decides no mostrar tu nombre.
+      </p>
+      <p>
+        El Buzón de lo que nunca dije: comparte esa historia, momento incómodo o confesión que siempre guardaste.  
+        Aquí, lo leemos o actuamos sin juicios.
+      </p>
+      <div class="img-container">
+        <img src="https://hotmart.com/media/2022/12/blog-image-como-criar-um-podcast.webp" alt="Ilustración 1">
+        <img src="https://res.cloudinary.com/dte7upwcr/image/upload/v1633897129/blog/blog2/podcasting/podcasting-img-header.jpg" alt="Ilustración 2">
+      </div>
+    </section>
+
+    <!-- Acerca -->
+    <section id="acerca" class="oculto">
+      <p>
+        ¿Tienes una anécdota divertida, emocionante o curiosa que quieras contar? Aquí puedes hacerlo sin dar tu nombre ni ningún dato personal.  
+        Cada relato será leído en nuestro podcast entre amigos, creando una comunidad auténtica y sincera.
+      </p>
+      <a class="btn" href="#" onclick="mostrar('historia')">Contar Historia</a>
+      <div class="img-container">
+        <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/11/what-is-a-podcast-1024x512.jpg" alt="Podcast">
+      </div>
+    </section>
+
+    <!-- Historia -->
+    <section id="historia" class="oculto">
+      <form id="form-historia" onsubmit="return validarFormulario()">
+        <label for="titulo">Título:</label><br>
+        <input type="text" id="titulo" name="titulo"><br><br>
+
+        <label for="historia-texto">Historia:</label><br>
+        <textarea id="historia-texto" name="historia" rows="10"></textarea><br><br>
+
+        <label>
+          <input type="checkbox" id="acepto">  
+          Acepto que mi historia sea leída en el podcast manteniendo mi anonimato.
+        </label><br><br>
+
+        <button type="submit">Enviar mi historia Anón.</button>
+      </form>
+    </section>
+
+<!-- Nosotros -->
+<section id="nosotros" class="oculto">
+  <h2>Nosotros</h2>
+  <p>
+    Somos un grupo de estudiantes apasionados por crear un espacio seguro,  
+    donde cualquiera pueda compartir lo que siente sin miedo al juicio.  
+    Nuestro objetivo es dar voz a esas historias que muchas veces se quedan en silencio.</p>
+    <p>MOOD es un espacio donde los estados de ánimo se vuelven historias. Aquí no hay guiones: solo amigos compartiendo lo que piensan, lo que sienten y lo que viven. A veces reflexivos, a veces divertidos, pero siempre auténticos. MOOD es estar presente, reír, hablar en serio, escuchar y conectar con ustedes.</p>
+  <div class="img-container">
+    <img src="data:image/jpeg;base64,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" alt="Nuestro equipo">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9wPqDrH_Xcw9hZ8d26doeFHZDHTxDsVOu4w&s" alt="Podcast entre amigos">
+  </div>
+</section>
+
+    <!-- Gracias -->
+<section id="gracias" class="oculto">
+  <h2>¡Gracias por compartir tu historia con nosotros!</h2>
+  <p>
+    Nos sentimos muy honrados de que hayas confiado en este espacio.  
+    Tu anonimato está completamente protegido.  
+    Gracias por ser parte de esta aventura sonora 💚
+  </p>
+  <button onclick="mostrar('historia')">Contar otra historia</button>
+  <button onclick="mostrar('inicio')">Regresar al inicio</button>
+</section>
+  </main>
+</body>
+</html>

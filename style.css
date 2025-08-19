@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: #7ca47c; /* Fondo verde claro */
+  color: #222;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* todo alineado a la izquierda */
+  gap: 10px;                   /* espacio entre el botón y el título */
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.7);
+  position: relative;
+}
+
+header button {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+header h1 {
+  flex: 1;             /* ocupa el espacio restante */
+  text-align: center;  /* se centra dentro de ese espacio */
+  margin: 0;
+}
+
+
+#sidebar {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: rgba(255,255,255,0.95);
+  transition: left 0.3s ease;
+  padding: 20px;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 50px;
+}
+
+#sidebar ul li {
+  margin: 15px 0;
+}
+
+#sidebar ul li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.img-container img {
+  width: 200px;
+  border-radius: 10px;
+}
+
+.btn, button {
+  background: #2e6b2e;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn:hover, button:hover {
+  background: #245524;
+}
+
+.oculto {
+  display: none;
+}
+
+textarea, input[type="text"] {
+  width: 80%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #999;
+}
